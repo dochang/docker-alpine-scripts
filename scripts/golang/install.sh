@@ -56,7 +56,7 @@ cd "${go_root}/src"
 ./make.bash
 
 # Remove bootstrap package.
-rm -rf "${bootstrap_prefix}"
+rm -rf "${bootstrap_prefix}" "${go_root}/pkg/bootstrap"
 
 # Delete golang build dependencies.
 apk del --purge golang-dependencies
