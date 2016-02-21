@@ -21,7 +21,7 @@ golang_url() {
 }
 
 # Install golang build dependencies.
-apk add --update-cache --virtual golang-dependencies bash ca-certificates gcc musl-dev openssl tar
+apk add --no-cache --virtual golang-dependencies bash ca-certificates gcc musl-dev openssl tar
 
 # Ensure bootstrap dir present.
 mkdir -p "${bootstrap_prefix}"

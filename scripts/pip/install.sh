@@ -3,7 +3,7 @@
 set -ex
 
 pip_deps='python curl openssl ca-certificates python-dev build-base'
-apk add --update-cache --virtual pip-dependencies ${pip_deps}
+apk add --no-cache --virtual pip-dependencies ${pip_deps}
 
 curl -sSL https://bootstrap.pypa.io/get-pip.py | python
 

@@ -2,4 +2,4 @@
 
 set -ex
 
-rm -rf /var/cache/apk/*
+[ -z "$(ls /var/cache/apk)" ] || rm -rf /var/cache/apk/*
