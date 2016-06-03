@@ -16,6 +16,9 @@ goroot_bootstrap=${bootstrap_prefix}/go
 go_archive=/golang.tar.gz
 go_root=${prefix}/go
 
+# https://golang.org/issue/14851
+no_pic_patch="$(dirname $0)/no-pic.patch"
+
 golang_url() {
 	printf "https://golang.org/dl/go%s.src.tar.gz" "$1"
 }
@@ -53,6 +56,7 @@ rm -f "${go_archive}"
 # Build golang.
 export GOROOT_BOOTSTRAP=${goroot_bootstrap}
 cd "${go_root}/src"
+patch -p2 -i "${no_pic_patch}"
 ./make.bash
 
 # Remove bootstrap package.
