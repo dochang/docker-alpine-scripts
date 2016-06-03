@@ -19,6 +19,10 @@ go_root=${prefix}/go
 # https://golang.org/issue/14851
 no_pic_patch="$(dirname $0)/no-pic.patch"
 
+# https://golang.org/issue/13114
+# alpinelinux/aports@b63af71
+new_binutils_patch="$(dirname $0)/new-binutils.patch"
+
 golang_url() {
 	printf "https://golang.org/dl/go%s.src.tar.gz" "$1"
 }
@@ -41,6 +45,7 @@ rm -f "${go_archive}"
 
 # Build bootstrap package.
 cd "${goroot_bootstrap}/src"
+patch -p2 -i "${new_binutils_patch}"
 ./make.bash
 
 # Download golang archive.
