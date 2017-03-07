@@ -4,8 +4,8 @@
 
 set -ex
 
-export GOLANG_VERSION=1.7.5
-export GOLANG_SRC_SHA256=4e834513a2079f8cbbd357502cccaac9507fd00a1efe672375798858ff291815
+export GOLANG_VERSION=1.8
+export GOLANG_SRC_SHA256=406865f587b44be7092f206d73fc1de252600b79b3cacc587b74b5ef5c623596
 
 prefix=/usr/local
 go_archive=/golang.tar.gz
